@@ -41,6 +41,9 @@
         min-height: auto;
         max-height: max-content;
     }
+    .card:hover {
+    animation: auraPulse 2s ease-in-out infinite;
+}
 }
 
 @container layout (max-width: 767px) {
@@ -59,13 +62,13 @@ body {
     min-height: 100vh;
     line-height: 1.4;
     color: var(--pri_text);
-
 }
 
 .container {
     container-type: inline-size;
     width: 100%;
     container-name: layout;
+    transition: all 0.3s ease;
 }
 
 .card-container {
@@ -103,15 +106,12 @@ body {
     color: var(--label);
 }
 
-.card:hover {
-    animation: auraPulse 2s ease-in-out infinite;
-}
-
 .estimate {
     font-size: clamp(1rem, 4cqi, 1.3rem);
     padding: var(--padding);
     border-radius: var(--radius);
     font-weight: 550;
+    transition: all 0.3s ease;
 }
 .estimate-label{
     font-size: 1.3rem;
@@ -204,12 +204,12 @@ body {
 .card:has(.services input:checked) .estimate {
     opacity: 1;
     filter: none;
-    box-shadow: 0 0 2px var(--acc_red);
+    box-shadow: 0 0 2px var(--acc_blue);
 }
 
 
 .card:has(.style input:checked) .estimate {
-    box-shadow: 0 0 2px var(--acc_red);
+    box-shadow: 0 0 2px var(--acc_blue);
     filter: none;
     opacity: 1;
 }
