@@ -1,6 +1,6 @@
 # 💼 Freelance Pricing Estimator (CSS-Only UI)
 
-A sleek, responsive pricing estimator panel for freelancers—designed entirely with **HTML & CSS**, no JavaScript involved.
+A sleek, responsive pricing estimator panel designed entirely with **HTML & CSS**, no JavaScript involved.
 
 This UI simulates a service pricing calculator, allowing users to select services, duration, and design preferences. It visually responds to user input with dynamic styles, animations, and container queries.
 
