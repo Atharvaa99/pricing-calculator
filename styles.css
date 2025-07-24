@@ -8,9 +8,24 @@
     --acc_red: #d63031;
     --label: #636e72;
 
-    --gap: 1.5rem;
+    --gap: clamp(1rem, 2.5vw, 1.5rem);
+    --padding: clamp(1rem, 4vw, 2rem);
     --radius: 12px;
     --shadow: 0 0 10px var(--label);
+}
+
+@container layout (max-width: 400px) {
+  .option {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+  }
+  .estimate-amount {
+    font-size: 1.3rem;
+  }
+  .card {
+    margin: 0.5rem;
+  }
 }
 
 
@@ -22,13 +37,14 @@
 
     .card {
         width: fit-content !important;
-        font-size: clamp(13px,2cqi,16px);
+        font-size: clamp(13px, 2cqi, 16px);
         min-height: auto;
         max-height: max-content;
     }
 }
-@container layout (max-width: 767px){
-    .style{
+
+@container layout (max-width: 767px) {
+    .style {
         display: flex;
         flex-direction: column;
     }
@@ -36,12 +52,14 @@
 
 body {
     background-color: var(--bg);
+    font-size: clamp(14px, 2.4vw, 17px);
     margin: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 2px;
     min-height: 100vh;
     line-height: 1.4;
     color: var(--pri_text);
+
 }
 
 .container {
@@ -51,7 +69,7 @@ body {
 }
 
 .card-container {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
 }
@@ -61,66 +79,119 @@ body {
     color: var(--pri_text);
     display: flex;
     flex-direction: column;
-    padding: 1.8rem;
+    padding: var(--padding);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     margin: 1rem 0.5rem;
     width: fit-content;
     max-width: 100%;
-    gap: clamp(1rem, 1.8cqi,1.2rem);
+    gap: var(--gap);
 }
-.card h1{
+
+.card h1 {
     font-size: clamp(1.6rem, 4cqi, 2.6rem);
     font-weight: 700;
 }
-.card h2{
+
+.card h2 {
     font-size: clamp(1.1rem, 2cqi, 1.5rem);
     font-weight: 600;
 }
-.card label{
+
+.card label {
     font-size: clamp(0.9rem, 1.5cqi, 1.1rem);
-    color:var(--label);
+    color: var(--label);
 }
-.card:hover{
+
+.card:hover {
     animation: auraPulse 2s ease-in-out infinite;
 }
-.estimate{
-    font-size: clamp(1rem, 4cqi, 1.3rem) ;
+
+.estimate {
+    font-size: clamp(1rem, 4cqi, 1.3rem);
     font-weight: 550;
 }
 
 .option {
-  display: inline-flex;
-  padding: 0.4rem 1.1rem;
-  margin: 0.4rem;
-  border-radius: 1000px;
-  background-color: #f0f0f0;
-  color: var(--pri_text);
-  font-weight: 500;
-  cursor: pointer;
-  user-select: none;
-  transition: 0.3s ease;
-  border: 2px solid transparent;
+    display: inline-flex;
+    padding: 0.4rem 1.1rem;
+    margin: 0.4rem;
+    border-radius: 1000px;
+    background-color: #f0f0f0;
+    color: var(--pri_text);
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
 }
+
 .option input {
-  display: none;
+    display: none;
+}
+
+.option:hover:has(input:not(:checked)) {
+    background-color: var(--acc_yell);
+    color: black;
 }
 
 .option:has(input:checked) {
-  background-color: var(--acc_green);
-  color: white;
-  border-color: var(--acc_green);
-  box-shadow: 0 0 0 2px #c1f7eb;
+    background-color: var(--acc_green);
+    color: white;
+    border-color: var(--acc_green);
+    box-shadow: 0 0 0 2px #c1f7eb;
 }
-g
+
+.range-slider {
+    -webkit-appearance: none;
+    width: 24%;
+    height: 8px;
+    background: #dfe6e9;
+    border-radius: 4px;
+    outline: none;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.range-slider:hover {
+    background: #b2bec3;
+}
+
+/* WebKit (Chrome, Safari) */
+.range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--acc_blue);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+    background: var(--acc_green);
+}
+
+/* Firefox */
+.range-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--acc_blue);
+    cursor: pointer;
+}
+
 @keyframes auraPulse {
-    0%{
-        box-shadow: 0 0 5px var(--acc_green);
+    0% {
+        box-shadow: 0 0 10px var(--acc_green);
     }
-    50%{
-        box-shadow: 0 0 5px var(--acc_blue);
+
+    50% {
+        box-shadow: 0 0 10px var(--acc_blue);
     }
-    100%{
-        box-shadow: 0 0 5px var(--acc_red);
+
+    100% {
+        box-shadow: 0 0 10px var(--acc_red);
     }
 }
