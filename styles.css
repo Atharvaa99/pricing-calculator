@@ -27,6 +27,12 @@
         max-height: max-content;
     }
 }
+@container layout (max-width: 767px){
+    .style{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 body {
     background-color: var(--bg);
@@ -41,12 +47,11 @@ body {
 .container {
     container-type: inline-size;
     width: 100%;
-    height: 100%;
     container-name: layout;
 }
 
 .card-container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -54,15 +59,68 @@ body {
 .card {
     background: var(--container);
     color: var(--pri_text);
-    min-height: max-content;
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
-    padding: 2rem;
+    padding: 1.8rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     margin: 1rem 0.5rem;
     width: fit-content;
-    height: 100%;
     max-width: 100%;
+    gap: clamp(1rem, 1.8cqi,1.2rem);
+}
+.card h1{
+    font-size: clamp(1.6rem, 4cqi, 2.6rem);
+    font-weight: 700;
+}
+.card h2{
+    font-size: clamp(1.1rem, 2cqi, 1.5rem);
+    font-weight: 600;
+}
+.card label{
+    font-size: clamp(0.9rem, 1.5cqi, 1.1rem);
+    color:var(--label);
+}
+.card:hover{
+    animation: auraPulse 2s ease-in-out infinite;
+}
+.estimate{
+    font-size: clamp(1rem, 4cqi, 1.3rem) ;
+    font-weight: 550;
+}
+
+.option {
+  display: inline-flex;
+  padding: 0.4rem 1.1rem;
+  margin: 0.4rem;
+  border-radius: 1000px;
+  background-color: #f0f0f0;
+  color: var(--pri_text);
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+.option input {
+  display: none;
+}
+
+.option:has(input:checked) {
+  background-color: var(--acc_green);
+  color: white;
+  border-color: var(--acc_green);
+  box-shadow: 0 0 0 2px #c1f7eb;
+}
+g
+@keyframes auraPulse {
+    0%{
+        box-shadow: 0 0 5px var(--acc_green);
+    }
+    50%{
+        box-shadow: 0 0 5px var(--acc_blue);
+    }
+    100%{
+        box-shadow: 0 0 5px var(--acc_red);
+    }
 }
