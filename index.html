@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Estimator.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>💼 Freelance Pricing Estimator</h1>
+        </div>
+        <div class="services">
+            <h2>🟢 Select Services</h2>
+            <label for="web-design">
+                <input type="checkbox" name="service" id="web-design" value="web-design">
+                WEB DESIGN
+            </label><br>
+            <label for="seo">
+                <input type="checkbox" name="service" id="seo" value="seo">
+                SEO Optimization
+            </label><br>
+            <label for="eCommerce">
+                <input type="checkbox" name="service" id="eCommerce" value="eCommerce">
+                eCommerce Setup
+            </label><br>
+            <label for="logo">
+                <input type="checkbox" name="service" id="logo" value="logo">
+                Logo + Branding
+            </label><br>
+            <label for="maintenance">
+                <input type="checkbox" name="service" id="maintenance" value="maintenance">
+                Maintenance Plan
+            </label><br>
+        </div>
+        <div class="duration">
+            <h2>🟡 Project Duration</h2>
+            <label for="duration">Timeline (in weeks):</label>
+            <input type="range" id="duration" name="duration" min="1" max="12" value="4">
+            <div class="range-labels">
+                <span>1 wk</span>
+                <span>6 wk</span>
+                <span>12 wk</span>
+            </div>
+        </div>
+        <div class="style">
+            <h2>🔵 Design Style</h2>
+            <label for="mini">
+                <input type="checkbox" name="design" id="mini" value="mini">
+                Minimalist
+            </label>
+            <label for="modern">
+                <input type="checkbox" name="design" id="modern" value="modern">
+                Modern
+            </label>
+            <label for="futuristic">
+                <input type="checkbox" name="design" id="futuristic" value="futuristic">
+                Futuristic
+            </label>
+        </div>
+        <div class="estimate">
+            <h2>🔴 Total Estimate</h2>
+            <p class="estimate-label">Estimated Price:</p>
+            <p class="estimate-amount">₹24,000</p>
+            <p class="note">Based on selected services and duration</p>
+        </div>
+    </div>
+</body>
+
+</html>

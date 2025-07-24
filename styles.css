@@ -1,0 +1,50 @@
+:root {
+    --bg: #f9f9fb;
+    --container: #ffffff;
+    --pri_text: #222831;
+    --acc_green: #00b894;
+    --acc_blue: #0984e3;
+    --acc_yell: #fdcb6e;
+    --acc_red: #d63031;
+    --label: #636e72;
+
+    --gap: 1.5rem;
+    --radius: 12px;
+    --shadow: 0 0 10px var(--label);
+}
+
+@container body (min-width: 769px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@container layout(min-width:769px) {}
+
+body {
+    background-color: var(--bg);
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    min-height: 100vh;
+
+    line-height: 1.4;
+    container-type: inline-size;
+    container-name: BODY;
+    color: var(--pri_text);
+}
+
+.container {
+    background: var(--container);
+    color: var(--pri-text);
+    display: grid;
+    gap: var(--gap);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    container-type: inline-size;
+    container-name: layout;
+    width: clamp(300px, 90%, 960px); 
+}
