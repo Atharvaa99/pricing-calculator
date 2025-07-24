@@ -109,9 +109,22 @@ body {
 
 .estimate {
     font-size: clamp(1rem, 4cqi, 1.3rem);
+    padding: var(--padding);
+    border-radius: var(--radius);
     font-weight: 550;
 }
-
+.estimate-label{
+    font-size: 1.3rem;
+    color: var(--label);
+}
+.estimate-amount{
+    color: var(--acc_blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.note{
+    color: var(--acc_green);
+}
 .option {
     display: inline-flex;
     padding: 0.4rem 1.1rem;
@@ -180,6 +193,28 @@ body {
     background: var(--acc_blue);
     cursor: pointer;
 }
+
+
+.card:has(.services input:not(:checked)) .estimate {
+    opacity: 0.5;
+    filter: grayscale(1);
+}
+
+
+.card:has(.services input:checked) .estimate {
+    opacity: 1;
+    filter: none;
+    box-shadow: 0 0 2px var(--acc_red);
+}
+
+
+.card:has(.style input:checked) .estimate {
+    box-shadow: 0 0 2px var(--acc_red);
+    filter: none;
+    opacity: 1;
+}
+
+
 
 @keyframes auraPulse {
     0% {
